@@ -1,0 +1,106 @@
+.top__section {
+	height: 100vh;
+	width: 100vw;
+	background-image: url(../img/hair-cat-header@3x.png);
+	background-color: $light-green;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	@include md-screens {
+		background-image: none;
+		// background-position: -100vh 20vw;
+	}
+
+	&--intro {
+		width: 60%;
+		color: $pine-green;
+
+		.main-title {
+			margin-top: 50px;
+			line-height: 1.2;
+			font-size: 6.1rem;
+			// font-size: clamp(5vw + 1rem, 6.3rem, 3vw + 2rem);
+			text-transform: uppercase;
+
+			@include xl-screens {
+				font-size: 5.175rem;
+			}
+
+			@include md-screens {
+				text-align: center;
+			}
+
+			@include sm-screens {
+				font-size: 4rem;
+			}
+
+			@include xs-screens {
+				font-size: 3rem;
+				margin-top: 20px;
+			}
+		}
+
+		@include md-screens {
+			width: 100%;
+		}
+
+		.main-intro {
+			font-size: 1.1rem;
+			width: 55%;
+			margin-top: 22px;
+
+			@include xl-screens {
+				width: 80%;
+			}
+
+			@include md-screens {
+				width: 100%;
+				text-align: center;
+			}
+
+			@include sm-screens {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	.logo {
+		margin: 30px 0;
+		width: 60px;
+	}
+
+	.logo-wrapper {
+		@include md-screens {
+			display: flex;
+			justify-content: center;
+		}
+	}
+}
+
+#start-quiz-btn {
+	padding: 15px 35px;
+	border-radius: 500px;
+	background-color: $tealish;
+	color: #fff;
+
+	margin: 38px 0;
+	text-transform: uppercase;
+	letter-spacing: 2.4px;
+	font-size: 0.85rem;
+	cursor: pointer;
+	box-shadow: 0 10px 30px -20px rgba(0, 0, 0, 0.5);
+
+	&:hover,
+	&:focus {
+		background-color: #fff;
+		color: $pine-green;
+	}
+}
+
+.quiz-btn-wrapper {
+	@include md-screens {
+		display: flex;
+		justify-content: center;
+	}
+}
