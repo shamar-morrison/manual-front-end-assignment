@@ -1,7 +1,7 @@
 import LandingPage from './LandingPage';
 
 function App() {
-	return <LandingPage quizState={true} />;
+	return <LandingPage />;
 }
 
 export default App;

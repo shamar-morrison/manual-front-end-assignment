@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { questions } from '../questions';
 import Question from './Question';
 import ReactHtmlParser from 'react-html-parser';
-import LandingPage from '../LandingPage';
 
 const disabledStyle = {
 	pointerEvents: 'none',
@@ -15,8 +14,6 @@ const curQuestionStyle = {
 };
 
 const Quiz = () => {
-	const [isLandingPageVisible, setIsLandingPageVisible] = useState(false);
-
 	const [answers, setAnswers] = useState();
 	const [curQuestionNum, setCurQuestionNum] = useState(1);
 	const [answeredQues, setAnsweredQues] = useState([]);
@@ -82,16 +79,9 @@ const Quiz = () => {
 		document.body.style = 'height: 100vh;';
 	}, []);
 
-	if (isLandingPageVisible) {
-		return <LandingPage quizState={false} />;
-	}
-
 	return (
 		<section className="quiz">
 			<div className="quiz__title-wrapper">
-				<button onClick={() => setIsLandingPageVisible(true)}>
-					<i className="fas fa-arrow-left"></i> Go back
-				</button>
 				<h1 className="quiz__title">Manual Quiz</h1>
 			</div>
 			<p className="quiz__subtitle">Take this quiz to help us find the right product for you.</p>
