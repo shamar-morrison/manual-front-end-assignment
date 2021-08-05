@@ -64,6 +64,11 @@
 				left: 50%;
 				transform: translateX(-50%);
 			}
+
+			@include xs-screens {
+				font-size: 17rem;
+				top: -100px;
+			}
 		}
 	}
 
@@ -129,6 +134,11 @@
 		@include md-screens {
 			left: 50%;
 			top: -200px;
+		}
+
+		@include xs-screens {
+			font-size: 15rem;
+			top: -110px;
 		}
 	}
 

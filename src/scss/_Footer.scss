@@ -29,6 +29,10 @@ footer {
 			gap: 80px;
 			margin-left: 0;
 		}
+
+		@include sm-screens {
+			justify-content: center;
+		}
 	}
 }
 

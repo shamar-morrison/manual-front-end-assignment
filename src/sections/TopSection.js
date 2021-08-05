@@ -1,7 +1,7 @@
 import mainHeaderImg from '../img/hair-cat-header@3x.png';
 import logo from '../img/manual-symblol@3x.png';
 
-const TopSection = () => {
+const TopSection = ({ startQuiz }) => {
 	return (
 		<main className="top__section">
 			<div className="container">
@@ -15,7 +15,9 @@ const TopSection = () => {
 						out
 					</p>
 					<div className="quiz-btn-wrapper">
-						<button id="start-quiz-btn">take the quiz</button>
+						<button id="start-quiz-btn" onClick={startQuiz}>
+							take the quiz
+						</button>
 					</div>
 				</div>
 			</div>

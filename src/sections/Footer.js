@@ -32,13 +32,13 @@ const Footer = () => {
 						<li className="list-title">Follow us</li>
 						<ul className="social-links">
 							<li className="list-item">
-								<i class="fab fa-facebook-f"></i>
+								<i className="fab fa-facebook-f"></i>
 							</li>
 							<li className="list-item">
-								<i class="fab fa-twitter"></i>
+								<i className="fab fa-twitter"></i>
 							</li>
 							<li className="list-item">
-								<i class="fab fa-linkedin"></i>
+								<i className="fab fa-linkedin"></i>
 							</li>
 						</ul>
 					</ul>
