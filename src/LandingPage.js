@@ -5,8 +5,8 @@ import Quiz from './sections/Quiz';
 
 import { useState } from 'react';
 
-const LandingPage = () => {
-	const [isQuizVisible, setIsQuizVisible] = useState(true);
+const LandingPage = ({ quizState }) => {
+	const [isQuizVisible, setIsQuizVisible] = useState(quizState);
 
 	if (isQuizVisible) {
 		return <Quiz />;

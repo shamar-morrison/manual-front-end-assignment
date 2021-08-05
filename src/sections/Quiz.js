@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { questions } from '../questions';
 import Question from './Question';
 import ReactHtmlParser from 'react-html-parser';
+import LandingPage from '../LandingPage';
 
 const disabledStyle = {
 	pointerEvents: 'none',
@@ -14,11 +15,14 @@ const curQuestionStyle = {
 };
 
 const Quiz = () => {
+	const [isLandingPageVisible, setIsLandingPageVisible] = useState(false);
+
+	const [answers, setAnswers] = useState();
 	const [curQuestionNum, setCurQuestionNum] = useState(1);
 	const [answeredQues, setAnsweredQues] = useState([]);
 	const [rejectedQuestions, setRejectedQuestions] = useState([]);
 	const [showResults, setShowResults] = useState(false);
-	// const [results, setResults] = useState(false);
+
 	const RESULTS_PAGE = 0;
 	const QUIZ_SUCCESS = `Great news! We have the perfect treatment for your
 							hair loss. Proceed to <a href='https://manual.co/'> www.manual.co </a>, and prepare to 
@@ -59,9 +63,13 @@ const Quiz = () => {
 				setAnsweredQues(prev => [...prev, RESULTS_PAGE]);
 			}
 			setCurQuestionNum(RESULTS_PAGE);
-			// setResults(true);
 		}
+
 		setCurQuestionNum(val + 1);
+	};
+
+	const updateAnswers = (option, val) => {
+		setAnswers(prev => ({ ...prev, [`question-${val}`]: option.value }));
 	};
 
 	useEffect(() => {
@@ -70,9 +78,22 @@ const Quiz = () => {
 		setAnsweredQues(prev => [...prev, curQuestionNum]);
 	}, [curQuestionNum]);
 
+	useEffect(() => {
+		document.body.style = 'height: 100vh;';
+	}, []);
+
+	if (isLandingPageVisible) {
+		return <LandingPage quizState={false} />;
+	}
+
 	return (
 		<section className="quiz">
-			<h1 className="quiz__title">Manual Quiz</h1>
+			<div className="quiz__title-wrapper">
+				<button onClick={() => setIsLandingPageVisible(true)}>
+					<i className="fas fa-arrow-left"></i> Go back
+				</button>
+				<h1 className="quiz__title">Manual Quiz</h1>
+			</div>
 			<p className="quiz__subtitle">Take this quiz to help us find the right product for you.</p>
 
 			<div className="questions">
@@ -123,6 +144,7 @@ const Quiz = () => {
 							handleOnChange={(option, itemNum) => {
 								updateQuestionNum(itemNum);
 								handleRejection(option, itemNum);
+								updateAnswers(option, itemNum);
 							}}
 							question={question}
 							itemNum={i + 1}
