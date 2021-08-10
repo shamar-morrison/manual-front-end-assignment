@@ -8,6 +8,8 @@
 	background-repeat: no-repeat;
 
 	@include md-screens {
+		background-image: none;
+
 		@supports (background-blend-mode: lighten) {
 			background-image: url(../img/hair-cat-header@3x-cropped.png);
 			background-blend-mode: lighten;
