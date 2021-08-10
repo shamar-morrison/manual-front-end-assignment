@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Manual Front End Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created as a case study for the Manual.co front end assignment.
 
 ## Available Scripts
 
