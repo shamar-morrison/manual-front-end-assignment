@@ -2,6 +2,8 @@
 
 This project was created as a case study for the Manual.co front end assignment.
 
+https://manual-front-end-assignment.netlify.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
