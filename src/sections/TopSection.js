@@ -1,4 +1,3 @@
-import mainHeaderImg from '../img/hair-cat-header@3x.png';
 import logo from '../img/manual-symblol@3x.png';
 
 const TopSection = ({ startQuiz }) => {

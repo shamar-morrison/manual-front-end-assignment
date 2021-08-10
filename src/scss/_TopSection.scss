@@ -1,15 +1,17 @@
 .top__section {
 	height: 100vh;
 	width: 100vw;
-	background-image: url(../img/hair-cat-header@3x.png);
+	background-image: url(../img/hair-cat-header@3x.jpg);
 	background-color: $light-green;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 
 	@include md-screens {
-		background-image: none;
-		// background-position: -100vh 20vw;
+		@supports (background-blend-mode: lighten) {
+			background-image: url(../img/hair-cat-header@3x-cropped.png);
+			background-blend-mode: lighten;
+		}
 	}
 
 	&--intro {
