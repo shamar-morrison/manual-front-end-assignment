@@ -27,10 +27,14 @@ const Question = ({ question, handleOnChange, itemNum, curQuestionNum }) => {
 								className="radio-btn"
 							/>
 
-							<label htmlFor={option.value.toString()}>
+							<label
+								htmlFor={option.value.toString()}
+								className={option.value.toString().localeCompare('true' || 'false') === 0 ? 'no-pointer-events' : null}
+							>
 								{option.display && ReactHtmlParser(option.display)}
 								{option.value}
 							</label>
+							{console.log('string compare', option.value.toString().localeCompare('true' || 'false'))}
 						</li>
 					);
 				})}

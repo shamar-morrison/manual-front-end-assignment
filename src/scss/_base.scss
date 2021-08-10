@@ -52,3 +52,11 @@ ul,
 li {
 	transition: 150ms linear;
 }
+
+.no-pointer-events {
+	pointer-events: none;
+}
+
+[type='radio'] {
+	cursor: pointer;
+}
